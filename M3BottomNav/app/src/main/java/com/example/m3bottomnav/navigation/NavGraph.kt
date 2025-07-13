@@ -1,14 +1,12 @@
-package com.example.m3drawerjc.navigation
+package com.example.m3bottomnav.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import com.example.m3drawerjc.screens.HomeScreen
-import com.example.m3drawerjc.screens.NotificationScreen
-import com.example.m3drawerjc.screens.ProfileScreen
-import com.example.m3drawerjc.screens.SettingScreen
+import com.example.m3bottomnav.screens.HomeScreen
+import com.example.m3bottomnav.screens.NotificationScreen
+import com.example.m3bottomnav.screens.ProfileScreen
+import com.example.m3bottomnav.screens.SettingScreen
 
 @Composable
 fun AppNavGraph(

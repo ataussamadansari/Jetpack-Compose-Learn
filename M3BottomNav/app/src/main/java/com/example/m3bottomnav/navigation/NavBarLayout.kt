@@ -1,9 +1,8 @@
-package com.example.m3drawerjc.navigation
+package com.example.m3bottomnav.navigation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -16,7 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.m3drawerjc.R
+import com.example.m3bottomnav.R
 
 @Composable
 fun NavBarHeader(modifier: Modifier = Modifier) {

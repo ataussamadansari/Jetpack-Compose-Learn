@@ -1,4 +1,4 @@
-package com.example.m3drawerjc.screens
+package com.example.m3bottomnav.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
