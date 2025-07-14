@@ -57,6 +57,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+<<<<<<< HEAD
 
     implementation("androidx.navigation:navigation-compose:2.9.1")
+=======
+    implementation("androidx.navigation:navigation-fragment:2.9.1")
+>>>>>>> a95b4656c6e45c3282f8972e61ebc93b3d07980d
 }
