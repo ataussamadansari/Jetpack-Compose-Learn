@@ -26,6 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.jetpackcomposeseries.Screens.AllTypeOfButton
 import com.example.jetpackcomposeseries.Screens.BoxScreen
 import com.example.jetpackcomposeseries.Screens.ImageScreen
+import com.example.jetpackcomposeseries.Screens.StateScreen
 import com.example.jetpackcomposeseries.Screens.TextFieldScreen
 import com.example.jetpackcomposeseries.Screens.TextScreen
 import com.example.jetpackcomposeseries.ui.theme.JetpackComposeSeriesTheme
@@ -43,7 +44,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ImageScreen()
+                    StateScreen()
                 }
             }
         }
@@ -54,7 +55,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     JetpackComposeSeriesTheme {
-        ImageScreen()
+        StateScreen()
     }
 }
 
