@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.jetpackcomposeseries"
+    namespace = "com.example.counterapp"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.jetpackcomposeseries"
+        applicationId = "com.example.counterapp"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -57,6 +57,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    // ViewModel utilities for Compose
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.1")
 }
