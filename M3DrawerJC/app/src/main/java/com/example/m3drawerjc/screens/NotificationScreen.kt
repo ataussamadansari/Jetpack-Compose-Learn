@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier) {
+fun NotificationScreen(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -20,6 +20,6 @@ fun HomeScreen(modifier: Modifier = Modifier) {
          verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Home Screen", fontSize = 40.sp, color = Color.DarkGray)
+        Text(text = "Notification Screen", fontSize = 40.sp, color = Color.DarkGray)
     }
 }

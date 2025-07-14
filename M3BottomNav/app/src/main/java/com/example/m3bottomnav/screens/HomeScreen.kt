@@ -1,4 +1,4 @@
-package com.example.m3drawerjc.screens
+package com.example.m3bottomnav.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -15,8 +15,7 @@ import androidx.compose.ui.unit.sp
 fun HomeScreen(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
-            .fillMaxSize()
-            .background(Color.White),
+            .fillMaxSize(),
          verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

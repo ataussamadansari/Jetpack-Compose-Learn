@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun NotificationScreen(modifier: Modifier = Modifier) {
+fun ProfileScreen(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -20,6 +20,6 @@ fun NotificationScreen(modifier: Modifier = Modifier) {
          verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Notification Screen", fontSize = 40.sp, color = Color.DarkGray)
+        Text(text = "Profile Screen", fontSize = 40.sp, color = Color.DarkGray)
     }
 }

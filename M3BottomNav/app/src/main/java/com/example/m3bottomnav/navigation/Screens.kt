@@ -1,4 +1,4 @@
-package com.example.m3drawerjc.navigation
+package com.example.m3bottomnav.navigation
 
 sealed class Screens(
     val route: String

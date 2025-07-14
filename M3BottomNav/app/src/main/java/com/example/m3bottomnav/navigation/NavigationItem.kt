@@ -1,4 +1,4 @@
-package com.example.m3drawerjc.navigation
+package com.example.m3bottomnav.navigation
 
 import androidx.compose.ui.graphics.vector.ImageVector
 
@@ -7,5 +7,6 @@ data class NavigationItem(
     val route: String,
     val selectedIcon: ImageVector,
     val unselectedIcon: ImageVector,
-    val badgeCount: Int? = null
+    val hasBadge: Boolean,
+    val badgeCount: Int? = null,
 )

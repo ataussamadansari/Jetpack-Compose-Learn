@@ -12,14 +12,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun ProfileScreen(modifier: Modifier = Modifier) {
+fun SettingScreen(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(Color.White),
-         verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Profile Screen", fontSize = 40.sp, color = Color.DarkGray)
+        Text(text = "Setting Screen", fontSize = 40.sp, color = Color.DarkGray)
     }
 }
