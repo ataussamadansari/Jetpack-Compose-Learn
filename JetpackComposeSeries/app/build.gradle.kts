@@ -58,5 +58,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // ViewModel utilities for Compose
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.1")
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
