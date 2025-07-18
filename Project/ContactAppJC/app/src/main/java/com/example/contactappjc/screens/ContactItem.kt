@@ -2,8 +2,12 @@ package com.example.contactappjc.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -18,7 +22,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import com.example.contactappjc.entity.Contact
 
@@ -27,9 +33,9 @@ fun ContactItem(contact: Contact, onClick: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 12.dp, horizontal = 8.dp)
+            .padding(vertical = 4.dp, horizontal = 8.dp)
             .clickable(onClick = onClick),
-        colors = CardDefaults.cardColors(Color.White),
+//        colors = CardDefaults.cardColors(Color.White),
         elevation = CardDefaults.cardElevation(4.dp)
     ) {
         Row(
@@ -42,14 +48,21 @@ fun ContactItem(contact: Contact, onClick: () -> Unit) {
             Image(
                 painter = rememberAsyncImagePainter(contact.image),
                 contentDescription = contact.name,
-                modifier = Modifier.size(50.dp)
+                modifier = Modifier
+                    .size(50.dp)
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop
             )
 
             Spacer(modifier = Modifier.width(16.dp))
 
-            Text(text = contact.name)
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+            ) {
+                Text(text = contact.name, fontSize = 18.sp, fontWeight = FontWeight.SemiBold, color = if (isSystemInDarkTheme()) Color.White else Color.Black)
+                Text(text = contact.phoneNumber, fontSize = 16.sp, color = if (isSystemInDarkTheme()) Color.White else Color.Black)
+            }
         }
     }
 }

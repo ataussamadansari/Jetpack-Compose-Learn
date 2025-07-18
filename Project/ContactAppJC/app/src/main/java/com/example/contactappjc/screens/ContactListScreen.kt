@@ -1,6 +1,7 @@
 package com.example.contactappjc.screens
 
 import android.widget.Toast
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
@@ -70,7 +71,7 @@ fun ContactListScreen(viewModel: ContactViewModel, navController: NavController)
             FloatingActionButton(onClick = {
                 navController.navigate(Destination.Add.route)
             }, containerColor = GreenJC) {
-                Icon(imageVector = Icons.Default.Add, contentDescription = "Add Contact")
+                Icon(imageVector = Icons.Default.Add, contentDescription = "Add Contact", tint = if (!isSystemInDarkTheme()) Color.White else Color.Black)
             }
         }
     ) { paddingValues ->

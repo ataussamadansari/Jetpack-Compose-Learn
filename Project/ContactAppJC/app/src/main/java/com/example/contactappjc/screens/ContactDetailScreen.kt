@@ -2,6 +2,8 @@ package com.example.contactappjc.screens
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -34,6 +36,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -75,7 +78,7 @@ fun ContactDetailScreen(
                         Toast.makeText(context, "Contact Details", Toast.LENGTH_SHORT).show()
                     }) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_collection),
+                            painter = painterResource(R.drawable.ic_circle_user),
                             contentDescription = null
                         )
                     }
@@ -91,7 +94,11 @@ fun ContactDetailScreen(
             FloatingActionButton(onClick = {
                 navController.navigate(Destination.Edit.createRoute(contact.id))
             }, containerColor = GreenJC) {
-                Icon(imageVector = Icons.Default.Edit, contentDescription = "Edit Contact")
+                Icon(
+                    imageVector = Icons.Default.Edit,
+                    contentDescription = "Edit Contact",
+                    tint = if (!isSystemInDarkTheme()) Color.White else Color.Black
+                )
             }
         }
     ) { paddingValues ->
@@ -107,7 +114,7 @@ fun ContactDetailScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp),
-                colors = CardDefaults.cardColors(Color.White),
+//                colors = CardDefaults.cardColors(Color.White),
                 shape = RoundedCornerShape(16.dp),
                 elevation = CardDefaults.cardElevation(8.dp)
             ) {
@@ -118,20 +125,48 @@ fun ContactDetailScreen(
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Image(
-                        painter = rememberAsyncImagePainter(contact.image),
-                        contentDescription = contact.name,
+                    Card(
                         modifier = Modifier
-                            .size(128.dp)
-                            .clip(CircleShape),
-                        contentScale = ContentScale.Crop
-                    )
+                            .padding(8.dp)
+                            .border(
+                                width = 1.dp,
+                                shape = CircleShape,
+                                brush = Brush.verticalGradient(
+                                    colors = listOf(
+                                        Color.White.copy(alpha = .15f),
+                                        Color.Black.copy(alpha = .15f),
+                                    )
+                                )
+                            ),
+//                        colors = CardDefaults.cardColors(Color.White),
+                        shape = CircleShape,
+                        elevation = CardDefaults.cardElevation(8.dp)
+                    ) {
+                        Image(
+                            painter = rememberAsyncImagePainter(contact.image),
+                            contentDescription = contact.name,
+                            modifier = Modifier
+                                .size(128.dp)
+                                .clip(CircleShape),
+                            contentScale = ContentScale.Crop
+                        )
+                    }
                     Spacer(modifier = Modifier.height(16.dp))
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(8.dp),
-                        colors = CardDefaults.cardColors(Color.White),
+                            .padding(8.dp)
+                            .border(
+                                width = 1.dp,
+                                shape = RoundedCornerShape(16.dp),
+                                brush = Brush.verticalGradient(
+                                    colors = listOf(
+                                        Color.White.copy(alpha = .15f),
+                                        Color.Black.copy(alpha = .15f),
+                                    )
+                                )
+                            ),
+//                        colors = CardDefaults.cardColors(Color.White),
                         shape = RoundedCornerShape(16.dp),
                         elevation = CardDefaults.cardElevation(8.dp)
                     ) {
@@ -141,17 +176,37 @@ fun ContactDetailScreen(
                                 .padding(16.dp),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Text(text = "Name: ", fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                            Text(
+                                text = "Name: ",
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = if (isSystemInDarkTheme()) Color.White else Color.Black
+                            )
                             Spacer(modifier = Modifier.width(8.dp))
-                            Text(contact.name, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                            Text(
+                                contact.name,
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = if (isSystemInDarkTheme()) Color.White else Color.Black
+                            )
                         }
                     }
 
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(8.dp),
-                        colors = CardDefaults.cardColors(Color.White),
+                            .padding(8.dp)
+                            .border(
+                                width = 1.dp,
+                                shape = RoundedCornerShape(16.dp),
+                                brush = Brush.verticalGradient(
+                                    colors = listOf(
+                                        Color.White.copy(alpha = .15f),
+                                        Color.Black.copy(alpha = .15f),
+                                    )
+                                )
+                            ),
+//                        colors = CardDefaults.cardColors(Color.White),
                         shape = RoundedCornerShape(16.dp),
                         elevation = CardDefaults.cardElevation(8.dp)
                     ) {
@@ -164,13 +219,15 @@ fun ContactDetailScreen(
                             Text(
                                 text = "Phone Number: ",
                                 fontSize = 16.sp,
-                                fontWeight = FontWeight.Bold
+                                fontWeight = FontWeight.Bold,
+                                color = if (isSystemInDarkTheme()) Color.White else Color.Black
                             )
                             Spacer(modifier = Modifier.width(8.dp))
                             Text(
                                 contact.phoneNumber,
                                 fontSize = 16.sp,
-                                fontWeight = FontWeight.Bold
+                                fontWeight = FontWeight.Bold,
+                                color = if (isSystemInDarkTheme()) Color.White else Color.Black
                             )
                         }
                     }
@@ -178,8 +235,18 @@ fun ContactDetailScreen(
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(8.dp),
-                        colors = CardDefaults.cardColors(Color.White),
+                            .padding(8.dp)
+                            .border(
+                                width = 1.dp,
+                                shape = RoundedCornerShape(16.dp),
+                                brush = Brush.verticalGradient(
+                                    colors = listOf(
+                                        Color.White.copy(alpha = .15f),
+                                        Color.Black.copy(alpha = .15f),
+                                    )
+                                )
+                            ),
+//                        colors = CardDefaults.cardColors(Color.White),
                         shape = RoundedCornerShape(16.dp),
                         elevation = CardDefaults.cardElevation(8.dp)
                     ) {
@@ -189,21 +256,56 @@ fun ContactDetailScreen(
                                 .padding(16.dp),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Text(text = "Email: ", fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                            Text(
+                                text = "Email: ",
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = if (isSystemInDarkTheme()) Color.White else Color.Black
+                            )
                             Spacer(modifier = Modifier.width(8.dp))
-                            Text(contact.email, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                            Text(
+                                contact.email,
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = if (isSystemInDarkTheme()) Color.White else Color.Black
+                            )
                         }
                     }
 
                     Spacer(modifier = Modifier.height(16.dp))
-                    Button(
-                        colors = ButtonDefaults.buttonColors(GreenJC),
-                        onClick = {
-                            viewModel.deleteContact(contact)
-                            navController.popBackStack()
-                        }) {
-                        Text(text = "Delete Contact")
+
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp)
+                            .border(
+                                width = 1.dp,
+                                shape = CircleShape,
+                                brush = Brush.verticalGradient(
+                                    colors = listOf(
+                                        GreenJC.copy(alpha = .15f),
+                                        GreenJC.copy(alpha = .15f),
+                                    )
+                                )
+                            ),
+                        colors = CardDefaults.cardColors(GreenJC),
+                        shape = CircleShape,
+                        elevation = CardDefaults.cardElevation(8.dp)
+                    ) {
+                        Button(
+                            modifier = Modifier.fillMaxWidth(),
+                            colors = ButtonDefaults.buttonColors(GreenJC),
+                            onClick = {
+                                viewModel.deleteContact(contact)
+                                navController.popBackStack()
+                            }) {
+                            Text(
+                                text = "Delete Contact",
+                                color = if (!isSystemInDarkTheme()) Color.White else Color.Black
+                            )
+                        }
                     }
+
                 }
             }
         }
